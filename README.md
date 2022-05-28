@@ -27,5 +27,7 @@ La recherche de la pièce s'effectue en utilisant une méthode de renforcement (
 ![image](https://user-images.githubusercontent.com/98098119/170833991-d6f57136-f195-4cad-bf40-7e1d2d940c55.png)
 
 
-Je lance ainsi tout ce programme jusqu'à obtenir un labyrinthe soluble entièrement, puis j'affiche et je sauvegarde son image.
+Je lance ainsi tout ce programme jusqu'à obtenir un labyrinthe soluble entièrement, puis j'affiche et je sauvegarde son image autant de fois que l'on veut (à l'infini):
 
+
+![image](https://user-images.githubusercontent.com/98098119/170834296-988c9d59-8408-4da3-ae6d-462b91a7cb22.png)
