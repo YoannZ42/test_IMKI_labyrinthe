@@ -16,13 +16,13 @@ et le trésor sont grisées, les murs sont en noirs et les pièces et les murs "
 Les actions pour se déplacer dans l'environnement (haut, bas, gauche, droite) font également parties des environnements instanciés.
 
 
-2 - La démarche est de même, tout sauf ardue à bien comprendre.
+2 - La démarche est de même, tout sauf ardue à bien comprendre:
 
-Pour générer une infinité de labyrinthes solubles selon les besoins du problèmes posés : un chemin du starting point à l'end point ET un chemin du starting point au trésor, j'ai décidé de vérifier séparément que le premier existe (effaçant le trésor) puis que le second existe également (effaçant la sortie).
-Ainsi je conclue simplement, si les deux pseudos-labyrinthes sont solubles alors le labyrinthe complet l'est aussi (puisque le starting point doit être liés à la fois au trésor et à la sortie selon l'énoncé).
-Pour vérifier qu'un chemin existe, je fais en sorte que la recherche de la pièce (trésor ou sortie) continue jusqu'à ce que celle-ci soit trouvée OU que le nombre de boucle effectuée par l'algorithme dépasse un nombre arbitrairement grand d'itération. Ainsi, si le nombre de boucle atteint ce nombre maximal, c'est que le chemin (pour ce labyrinthe de taille relativement réduite) est inatteignable. À noter qu'une méthode de la classe Environnement pour qu'un mur ne soit pas franchissable.
+Pour générer un labyrinthe soluble selon les besoins du problème posé : c'est-à-dire un chemin du starting point à l'end point ET un chemin du starting point au trésor, j'ai décidé de générer aléatoirement un labyrinthe puis j'ai vérifié séparément que le premier chemin existe (effaçant le trésor) puis que le second existe également (effaçant la sortie).
+Ainsi je conclue simplement, si les deux pseudos-labyrinthes sont solubles alors le labyrinthe complet l'est aussi (puisque le starting point doit être lié à la fois au trésor et à la sortie selon l'énoncé).
+Pour vérifier qu'un chemin existe, je fais en sorte que la recherche de la pièce (trésor ou sortie) continue jusqu'à ce que celle-ci soit trouvée (méthode de la classe Environnement) OU que le nombre de boucle effectuée par l'algorithme dépasse un nombre arbitrairement grand d'itérations. Ainsi, si le nombre de boucle atteint ce nombre maximal, c'est que la pièce recherchée (pour ce labyrinthe de taille relativement réduite) est inatteignable et donc le chemin n'existe pas. À noter qu'une méthode de la classe Environnement est implémentée pour qu'un mur ne soit pas franchissable.
 
-La recherche de la pièce s'effectue en utilisant une méthode de renforcement (Q-learning) avec "beaucoup" d'exploration pour trouver la pièce recherchée. L'objectif ici n'est pas d'optimiser la Q-table mais simplement de savoir si un chemin "valide" existe. On ne cherche donc pas à relancer l'algorithme jusqu'à ce que la Q-table soit bien complétée mais l'on met tout de même en place la méthode pour le faire le cas échéant. C'est pourquoi, à chaque itération, je mets à jour la Q-table  à l'aide de l'équation de Bellman mise à jour:
+La recherche de la pièce s'effectue en utilisant une méthode de renforcement (Q-learning) avec "beaucoup" d'exploration pour trouver la pièce recherchée. L'objectif ici n'est pas d'optimiser la Q-table mais simplement de savoir si un chemin existe. On ne cherche donc pas à relancer l'algorithme jusqu'à ce que la Q-table soit bien complétée mais l'on met tout de même en place la méthode pour le faire le cas échéant. C'est pourquoi, à chaque itération, je mets à jour la Q-table  à l'aide de l'équation de Bellman (forme avec récurrence):
 
 ![image](https://user-images.githubusercontent.com/98098119/170833991-d6f57136-f195-4cad-bf40-7e1d2d940c55.png)
 
