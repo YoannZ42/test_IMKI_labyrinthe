@@ -4,14 +4,14 @@
 Pour résoudre ce problème, j'ai adopté ici une architecture très simple: une seule classe est crée, la classe Environnement.
 
 1 - Les objets de cette classe sont d'abord définis par une grille (en fait le labyrinthe) possédant 16 pièces (0 ou 1 (si sortie ou trésor)) 
-    et chaque séparation entre ces pièces est représentée par un mur ou par rien (-1 ou 0).
+    et des séparations entre ces pièces représentées par des murs "passant" ou non (-1 ou 0).
     Ainsi la grille ou matrice possède 16 pièces (avec l'entrée et la sortie qui sont fixes) et 33 murs (laissant ou ne laissant pas passer) pour 
     un total de 49 cases. Conservant cette structure, ces labyrinthes sont générés aléatoirement:
     
   ![Labyrinthe_soluble](https://user-images.githubusercontent.com/98098119/170832952-5b116cc6-7150-4131-9aa9-498025a96186.png)
     
-Des coordonnées (x,y) sont également associés à chaque environnement instancié. Par exemple, ici les pièces avec l'entrée (0,0), la sortie
-et le trésor sont grisées. Les murs sont en noirs et les pièces et les murs "libres" (laissant passer) sont blancs.
+Des coordonnées (x,y) sont également associés à chaque environnement instancié. Les pièces avec l'entrée, la sortie
+et le trésor sont grisées, les murs sont en noirs et les pièces et les murs "passant" (laissant passer) sont blancs.
 
 Les actions pour se déplacer dans l'environnement (haut, bas, gauche, droite) font également parties des environnements instanciés.
 
