@@ -5,7 +5,7 @@ Pour résoudre ce problème, j'ai adopté ici une architecture très simple: une
 
 1 - Les objets de cette classe sont d'abord définis par une grille (en fait le labyrinthe) possédant 16 pièces (0 ou 1 (si sortie ou trésor)) 
     et des séparations entre ces pièces représentées par des murs "passant" ou non (-1 ou 0).
-    Ainsi la grille ou matrice possède 16 pièces (avec l'entrée et la sortie qui sont fixes) et 33 murs (laissant ou ne laissant pas passer) pour 
+    Ainsi la grille ou matrice possède 16 pièces (avec l'entrée, le trésor et la sortie qui sont fixes) et 33 murs (laissant ou ne laissant pas passer) pour 
     un total de 49 cases (il y a donc 49 états possibles en théorie). Conservant cette structure, ces labyrinthes sont générés aléatoirement:
     
   ![Labyrinthe_soluble](https://user-images.githubusercontent.com/98098119/170832952-5b116cc6-7150-4131-9aa9-498025a96186.png)
